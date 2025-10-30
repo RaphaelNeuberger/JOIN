@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Task • Join</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" href="../img/logo/Logo for Favicon construction.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/sidebar.css" />
+    <link rel="stylesheet" href="../css/add-task.css" />
+    <link rel="stylesheet" href="../css/fonts.css" />
+  </head>
+  <body onload="includeHeaderHTML();includeSidebarHTML();initAddTaskPage()">
+    <nav header-html="./header.html"></nav>
+    <aside sidebar-html="./sidebar.html"></aside>
+
+    <main class="addtask-wrap">
+      <div class="summary-head">
+        <h1 class="page-title">Join 360 <span class="divider">|</span> <span class="subtitle">Key Metrics at a Glance</span></h1>
+      </div>
+
+      <section class="kpi-grid">
+        <article class="kpi-card">
+          <div class="kpi-icon material-icons">edit_square</div>
+          <div class="kpi-value" id="kpi-todo">1</div>
+          <div class="kpi-label">To-do</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-icon material-icons">check_circle</div>
+          <div class="kpi-value" id="kpi-done">1</div>
+          <div class="kpi-label">Done</div>
+        </article>
+        <article class="kpi-card urgent">
+          <div class="kpi-icon material-icons">priority_high</div>
+          <div class="kpi-value" id="kpi-urgent">1</div>
+          <div class="kpi-label">Urgent</div>
+        </article>
+        <article class="kpi-card deadline">
+          <div class="kpi-deadline-date" id="kpi-deadline-date">October 16, 2022</div>
+          <div class="kpi-label">Upcoming Deadline</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-value" id="kpi-board">5</div>
+          <div class="kpi-label">Tasks in Board</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-value" id="kpi-progress">2</div>
+          <div class="kpi-label">Tasks In Progress</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-value" id="kpi-feedback">2</div>
+          <div class="kpi-label">Awaiting Feedback</div>
+        </article>
+      </section>
+
+      <section class="greeting">
+        <p class="greet-text">Good morning, <span class="greet-name" id="greet-name">Sofia Müller</span></p>
+      </section>
+    </main>
+
+    <script src="../scripts/templates.js"></script>
+    <script src="../scripts/config.js"></script>
+    <script src="../scripts/helpers.js"></script>
+    <script src="../scripts/storage.js"></script>
+    <script src="../scripts/add_task.js"></script>
+  </body>
+</html>
