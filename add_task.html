@@ -4,14 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Task • Join</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet" />
-    <link
-      rel="icon"
-      href="img/logo/Logo for Favicon construction.svg"
-      type="image/svg+xml" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="icon" href="img/logo/Logo for Favicon construction.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
     <link rel="stylesheet" href="css/add-task.css" />
     <link rel="stylesheet" href="css/fonts.css" />
   </head>
@@ -75,6 +71,19 @@
     <script src="scripts/helpers.js"></script>
     <script src="scripts/storage.js"></script>
     <script src="scripts/templates.js"></script>
+    <script>
+      // Mark active link after sidebar is injected
+      window.addEventListener('load', ()=>{
+        setTimeout(()=>{
+          document.querySelectorAll('.sidebar .nav-item').forEach(a=>{
+            const href=a.getAttribute('href');
+            if(href && location.pathname.endsWith(href)){
+              a.classList.add('active');
+            }
+          });
+        },0);
+      });
+    </script>
     <script src="scripts/add_task.js"></script>
   </body>
 </html>
