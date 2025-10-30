@@ -7,29 +7,106 @@
   <title>Join</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" href="img/logo/Logo for Favicon construction.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/indexstyle.css">
-  <link rel="stylesheet" href="styles/fonts.css">
-  <link rel="stylesheet" href="styles/indexstyle.css">
 </head>
 
-
 <body>
-
   <header>
-    <img src="./img/Capa 2.png" alt="">
-    <div>
-      <a href="">Not a Join Unser? </a>
-      <button class="dark-button">Sign up</button>
+    <img src="img/logo/Logo for Favicon construction.svg" alt="Join Logo" class="join-logo">
+    <div class="signup-box">
+      <span class="signup-text">Not a Join user?</span>
+      <button class="signup-btn dark-button" id="toggle-form">Sign up</button>
     </div>
   </header>
-  <main>
+
+  <!-- === LOGIN FORM === -->
+  <main id="login-form">
     <h1>Log in</h1>
     <div class="blueline"></div>
-    <input type="text">
-    <input type="text">
-    <div>
+
+    <div class="input-group">
+      <input type="email" placeholder="E-Mail" required>
+      <span class="material-icons">email</span>
+    </div>
+
+    <div class="input-group">
+      <input type="password" placeholder="Passwort" id="password" required>
+      <span class="material-icons" id="toggle-password">lock</span>
+    </div>
+
+    <div class="button-group">
       <button class="dark-button">Log in</button>
       <button>Guest Log in</button>
     </div>
   </main>
+
+  <!-- === SIGN UP FORM === -->
+  <main id="signup-form" class="hidden">
+    <h1>Sign up</h1>
+    <div class="blueline"></div>
+
+    <div class="input-group">
+      <input type="text" placeholder="Name" required>
+      <span class="material-icons">person</span>
+    </div>
+
+    <div class="input-group">
+      <input type="email" placeholder="E-Mail" required>
+      <span class="material-icons">email</span>
+    </div>
+
+    <div class="input-group">
+      <input type="password" placeholder="Passwort" id="signup-password" required>
+      <span class="material-icons">lock</span>
+    </div>
+
+    <div class="input-group">
+      <input type="password" placeholder="Confirm Passwort" required>
+      <span class="material-icons">lock</span>
+    </div>
+
+    <div class="button-group">
+      <button class="dark-button">Sign up</button>
+    </div>
+  </main>
+
+  <!-- === FOOTER LINKS === -->
+  <div class="footer-links">
+    <a href="privacypolicy.html">Privacy Policy</a>
+    <a href="legal-notice.html">Legal Notice</a>
+  </div>
+
+  <script>
+    const togglePassword = document.getElementById("toggle-password");
+    const passwordInput = document.getElementById("password");
+    const toggleForm = document.getElementById("toggle-form");
+    const loginForm = document.getElementById("login-form");
+    const signupForm = document.getElementById("signup-form");
+    const signupBtnText = document.querySelector(".signup-text");
+    const signupBtn = document.querySelector(".signup-btn");
+
+    // Passwortanzeige umschalten
+    togglePassword.addEventListener("click", () => {
+      const type = passwordInput.type === "password" ? "text" : "password";
+      passwordInput.type = type;
+      togglePassword.textContent = type === "password" ? "lock" : "visibility_off";
+    });
+
+    // Zwischen Login & Signup wechseln
+    toggleForm.addEventListener("click", () => {
+      loginForm.classList.toggle("hidden");
+      signupForm.classList.toggle("hidden");
+
+      if (signupForm.classList.contains("hidden")) {
+        signupBtnText.textContent = "Not a Join user?";
+        signupBtn.textContent = "Sign up";
+      } else {
+        signupBtnText.textContent = "Already have an account?";
+        signupBtn.textContent = "Log in";
+      }
+    });
+  </script>
 </body>
+
+</html>
