@@ -1,13 +1,76 @@
 /* Sidebar styles */
-.sidebar{position:fixed;left:0;top:0;bottom:0;width:240px;background:#2a3647;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:16px 12px 20px;box-sizing:border-box}
-.sidebar-brand{padding:8px 8px 20px}
-.sidebar-logo{height:56px}
-.sidebar-nav{display:flex;flex-direction:column;gap:6px}
-.nav-item{display:flex;align-items:center;gap:12px;color:#e5e7eb;text-decoration:none;padding:10px 12px;border-radius:8px;transition:background .12s ease,color .12s ease}
-.nav-item .material-icons{font-size:18px;opacity:.9}
-.nav-item:hover{background:rgba(255,255,255,.06)}
-.nav-item.active{background:#1f2940;color:#fff}
-.sidebar-footer{display:flex;flex-direction:column;gap:6px;padding:8px}
-.footer-link{color:#c8cfd9;text-decoration:none;font-size:12px}
-.footer-link:hover{color:#fff}
-@media(max-width:900px){.sidebar{width:80px}.nav-item span:last-child{display:none}.sidebar-logo{height:40px}}
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 240px;
+  background: #2a3647;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 12px 20px;
+  box-sizing: border-box;
+}
+.sidebar-brand {
+  padding: 8px 8px 20px;
+  display: flex;
+  justify-content: center;
+}
+.sidebar-logo {
+  height: 100%;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e5e7eb;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background 0.12s ease, color 0.12s ease;
+  padding-left: 36px;
+}
+.nav-item .material-icons {
+  font-size: 18px;
+  opacity: 0.9;
+}
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+.nav-item.active {
+  background: #1f2940;
+  color: #fff;
+}
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  align-items: center;
+}
+.footer-link {
+  color: #c8cfd9;
+  text-decoration: none;
+  font-size: 12px;
+}
+.footer-link:hover {
+  color: #fff;
+}
+@media (max-width: 900px) {
+  .sidebar {
+    width: 80px;
+  }
+  .nav-item span:last-child {
+    display: none;
+  }
+  .sidebar-logo {
+    height: 40px;
+  }
+}
