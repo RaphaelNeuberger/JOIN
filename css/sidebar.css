@@ -15,10 +15,11 @@
 }
 .sidebar-brand {
   padding: 8px 8px 20px;
+  display: flex;
+  justify-content: center;
 }
 .sidebar-logo {
   height: 100%;
-  align-items: center;
 }
 .sidebar-nav {
   display: flex;
@@ -34,6 +35,7 @@
   padding: 10px 12px;
   border-radius: 8px;
   transition: background 0.12s ease, color 0.12s ease;
+  padding-left: 36px;
 }
 .nav-item .material-icons {
   font-size: 18px;
@@ -51,6 +53,7 @@
   flex-direction: column;
   gap: 6px;
   padding: 8px;
+  align-items: center;
 }
 .footer-link {
   color: #c8cfd9;

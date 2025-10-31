@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.main-sidebar {
+/* .main-sidebar {
   background-color: #2a3647;
   width: 232px;
   height: 100vh;
@@ -10,13 +10,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.sidebar-logo {
-  width: 100px;
-  height: 121px;
-  margin-top: 64px;
-  cursor: pointer;
 }
 
 .sidebar-top {
@@ -34,4 +27,4 @@ body {
 
 .sidebar-bottom ul a {
   color: #a8a8a8;
-}
+} */
