@@ -1,4 +1,12 @@
-.header {
+.header-content {
   background-color: #fff;
-  height: 10px;
+  height: 100px;
+  color: #000;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header-right {
+  justify-content: flex-end;
 }
