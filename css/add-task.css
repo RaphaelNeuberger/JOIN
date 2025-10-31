@@ -27,21 +27,23 @@ main.addtask-wrap {
   margin: 8px 0 24px;
 }
 .page-title {
-  font-size: 36px;
-  font-weight: 800;
+  font-size: 61px;
+  font-weight: 700;
   letter-spacing: 0.2px;
   color: var(--ink);
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.page-title .divider {
-  color: #1aa0da;
-  font-weight: 700;
+.divider {
+  background-color: #29abe2;
+  width: 2px;
+  height: 59px;
 }
+
 .subtitle {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 27px;
+  font-weight: 400;
   color: var(--muted);
 }
 /* KPI grid */
@@ -50,6 +52,7 @@ main.addtask-wrap {
   grid-template-columns: repeat(3, 240px);
   grid-auto-rows: 120px;
   gap: 16px;
+  display: flex;
 }
 .kpi-card {
   background: var(--panel);
@@ -64,16 +67,23 @@ main.addtask-wrap {
 }
 .kpi-icon {
   font-size: 22px;
-  color: #1f2a3c;
+  color: #2a3647;
   background-color: #2a3647;
+  padding: 12px;
   border-radius: 90%;
   opacity: 0.9;
   margin-bottom: 6px;
 }
+
+.kpi-valuelabel {
+  display: flex;
+  flex-direction: column;
+}
 .kpi-value {
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 64px;
+  font-weight: 600;
   color: #1f2a3c;
+  display: flex;
 }
 .kpi-label {
   font-size: 12px;
