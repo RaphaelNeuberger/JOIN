@@ -1,128 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Task • Join</title>
+    <link
+      rel="icon"
+      href="img/logo/Logo for Favicon construction.svg"
+      type="image/svg+xml" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/add-task.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Add Task • Join</title>
-  <link rel="icon" href="img/logo/Logo for Favicon construction.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/header.css" />
-  <link rel="stylesheet" href="css/sidebar.css" />
-  <link rel="stylesheet" href="css/add-task.css" />
-  <link rel="stylesheet" href="css/fonts.css" />
-</head>
+  <body onload="includeHeaderHTML();includeSidebarHTML();initAddTaskPage()">
+    <nav header-html="./templates/header.html"></nav>
+    <aside sidebar-html="./templates/sidebar.html"></aside>
+    <main class="addtask-wrap">
+      <div class="summary-head">
+        <h1 class="page-title">
+          Join 360 <span class="divider"></span>
+          <span class="subtitle">Key Metrics at a Glance</span>
+        </h1>
+      </div>
 
-<body onload="includeHeaderHTML();includeSidebarHTML();initAddTaskPage()">
-  <nav header-html="./templates/header.html"></nav>
-  <aside sidebar-html="./templates/sidebar.html"></aside>
-  <main class="addtask-wrap">
-    <div class="summary-head">
-      <h1 class="page-title">
-        Join 360 <span class="divider"></span>
-        <span class="subtitle">Key Metrics at a Glance</span>
-      </h1>
-    </div>
-
-
-    <section class="dashboard">
-      <section class="kpi-left">
-        <div class="kpi-line">
-
-          <article class="kpi-card">
-            <div class="kpi-icon">
-              <img src="img/icons/edit.svg" alt="To-do" width="36" height="36" />
-            </div>
-            <div class="kpi-valuelabel">
-              <div class="kpi-value" id="kpi-todo">1</div>
-              <div class="kpi-label">To-do</div>
-            </div>
-          </article>
-          <article class="kpi-card">
-            <div class="kpi-icon">
-              <img src="img/icons/done.svg" alt="Done" width="36" height="36" />
-            </div>
-            <div class="kpi-valuelabel">
-              <div class="kpi-value" id="kpi-done">1</div>
-              <div class="kpi-label">Done</div>
-            </div>
-          </article>
-        </div>
-
-
-        <div class="kpi-grid">
-          <article class="kpi-card deadline">
-            <div class="kpi-icon">
-              <img src="img/icons/urgent.svg" alt="Urgent" width="36" height="36" />
-            </div>
-            <div class="kpi-valuelabel">
-              <div class="kpi-value" id="kpi-urgent">1</div>
-              <div class="kpi-label">Urgent</div>
-            </div>
-            <div class="kpi-icon"></div>
-            <div style="display: flex; align-items: center; gap: 24px">
-              <div>
-                <div class="kpi-value" id="kpi-upcoming"></div>
-                <div class="kpi-label"><strong>October 16, 2022</strong></div>
+      <section class="dashboard">
+        <section class="kpi-left">
+          <div class="kpi-line">
+            <article class="kpi-card">
+              <div class="kpi-icon">
+                <img src="img/icons/edit.svg" alt="To-do" />
               </div>
-              <div style="margin-left: 18px">
-                <div class="kpi-label">Upcoming Deadline</div>
+              <div class="kpi-valuelabel">
+                <div class="kpi-value" id="kpi-todo">1</div>
+                <div class="kpi-label">To-do</div>
               </div>
+            </article>
+            <article class="kpi-card">
+              <div class="kpi-icon">
+                <img src="img/icons/done.svg" alt="Done" />
+              </div>
+              <div class="kpi-valuelabel">
+                <div class="kpi-value" id="kpi-done">1</div>
+                <div class="kpi-label">Done</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="kpi-line">
+            <div class="kpi-grid">
+              <article class="kpi-card deadline">
+                <div class="kpi-icon">
+                  <img src="img/icons/urgent.svg" alt="Urgent" />
+                </div>
+                <div class="kpi-valuelabel">
+                  <div class="kpi-value" id="kpi-urgent">1</div>
+                  <div class="kpi-label">Urgent</div>
+                </div>
+                <div class="kpi-icon"></div>
+                <div style="display: flex; align-items: center; gap: 24px">
+                  <div>
+                    <div class="kpi-value" id="kpi-upcoming"></div>
+                    <div class="kpi-label">
+                      <strong>October 16, 2022</strong>
+                    </div>
+                  </div>
+                  <div style="margin-left: 18px">
+                    <div class="kpi-label">Upcoming Deadline</div>
+                  </div>
+                </div>
+                <div class="kpi-valuelabel"></div>
+              </article>
             </div>
-            <div class="kpi-valuelabel"></div>
-          </article>
-        </div>
+          </div>
+          <div class="kpi-line">
+            <article class="kpi-card3">
+              <div class="kpi-value" id="kpi-board">5</div>
+              <div class="kpi-label">Tasks in Board</div>
+            </article>
 
+            <article class="kpi-card3">
+              <div class="kpi-value" id="kpi-progress">2</div>
+              <div class="kpi-label">Tasks In Progress</div>
+            </article>
 
-        <div class="kpi-grid">
-          <article class="kpi-card">
-            <div class="kpi-value" id="kpi-board">5</div>
-            <div class="kpi-label">Tasks in Board</div>
-        </div>
-        </article>
-        <div class="kpi-valuelabel">
-          <article class="kpi-card">
-            <div class="kpi-value" id="kpi-progress">2</div>
-            <div class="kpi-label">Tasks In Progress</div>
-        </div>
-        </article>
-        <div class="kpi-valuelabel">
-          <article class="kpi-card">
-            <div class="kpi-value" id="kpi-feedback">2</div>
-            <div class="kpi-label">Awaiting Feedback</div>
-        </div>
-        </article>
-        </div>
+            <article class="kpi-card3">
+              <div class="kpi-value" id="kpi-feedback">2</div>
+              <div class="kpi-label">Awaiting Feedback</div>
+            </article>
+          </div>
+          <div class="kpi-line"></div>
+        </section>
+        <section class="kpi-right">
+          <section class="greeting">
+            <p class="greet-text">Good morning,</p>
+            <span class="greet-name" id="greet-name">Sofia Müller</span>
+          </section>
+        </section>
       </section>
-
-      <section class="greeting">
-        <p class="greet-text">
-          Good morning,</p>
-        <span class="greet-name" id="greet-name">Sofia Müller</span>
-
-      </section>
-    </section>
-  </main>
-  <script src="scripts/config.js"></script>
-  <script src="scripts/helpers.js"></script>
-  <script src="scripts/storage.js"></script>
-  <script src="scripts/templates.js"></script>
-  <script>
-    // Mark active nav after sidebar loads
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.querySelectorAll(".sidebar .nav-item").forEach((a) => {
-          const href = a.getAttribute("href");
-          if (href && location.pathname.endsWith(href)) {
-            a.classList.add("active");
-          } else {
-            a.classList.remove("active");
-          }
-        });
-      }, 0);
-    });
-  </script>
-  <script src="scripts/add_task.js"></script>
-</body>
-
+    </main>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/helpers.js"></script>
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script>
+      // Mark active nav after sidebar loads
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.querySelectorAll(".sidebar .nav-item").forEach((a) => {
+            const href = a.getAttribute("href");
+            if (href && location.pathname.endsWith(href)) {
+              a.classList.add("active");
+            } else {
+              a.classList.remove("active");
+            }
+          });
+        }, 0);
+      });
+    </script>
+    <script src="scripts/add_task.js"></script>
+  </body>
 </html>
