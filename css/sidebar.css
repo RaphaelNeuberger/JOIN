@@ -20,7 +20,9 @@
 }
 .sidebar-logo {
   height: 100%;
+  padding-top: 45px;
 }
+
 .sidebar-nav {
   display: flex;
   flex-direction: column;
