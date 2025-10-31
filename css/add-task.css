@@ -79,7 +79,8 @@ main.addtask-wrap {
   flex-wrap: wrap;
   width: 100%;
   padding: 24px;
-  margin: 0 0 24px 24px;
+  margin-right: 24px;
+  margin-bottom: 24px;
 }
 
 .kpi-card deadline {
@@ -99,7 +100,8 @@ main.addtask-wrap {
   flex-wrap: wrap;
   width: 100%;
   padding: 24px;
-  margin: 0 24px 0 24px;
+  margin-right: 24px;
+  margin-bottom: 24px;
 }
 .kpi-icon {
   font-size: 22px;
@@ -107,7 +109,7 @@ main.addtask-wrap {
   background-color: var(--ink);
   padding: 12px;
   border-radius: 90%;
-  margin: 0 24px 0 24px;
+  margin: 0 24px 0 0;
   margin-bottom: 6px;
   width: 32px;
   height: 32px;
@@ -120,13 +122,29 @@ main.addtask-wrap {
   background-color: #ff3d00;
   padding: 12px;
   border-radius: 90%;
+  margin: 24px 24px;
 }
 
 .dividerdeadline {
   width: 2px;
   color: #d1d1d1;
-  height: 50px;
+  height: 64px;
   background-color: #d1d1d1;
+  margin: 24px 24px;
+}
+
+.deadlinedate {
+  font-size: 21px;
+  font-style: bold;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.deadlinetext {
+  font-size: 16px;
+  font-style: regular;
+  font-weight: 400;
+  color: var(--ink);
 }
 
 .kpi-valuelabel {
@@ -150,7 +168,6 @@ main.addtask-wrap {
 }
 .kpi-card.deadline {
   display: flex;
-  align-items: flex-start;
   justify-content: center;
 }
 .kpi-deadline-date {
