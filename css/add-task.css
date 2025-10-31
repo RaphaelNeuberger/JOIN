@@ -64,6 +64,8 @@ main.addtask-wrap {
 .kpi-icon {
   font-size: 22px;
   color: #1f2a3c;
+  background-color: #2a3647;
+  border-radius: 90%;
   opacity: 0.9;
   margin-bottom: 6px;
 }

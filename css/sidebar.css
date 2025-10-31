@@ -17,7 +17,8 @@
   padding: 8px 8px 20px;
 }
 .sidebar-logo {
-  height: 56px;
+  height: 100%;
+  align-items: center;
 }
 .sidebar-nav {
   display: flex;
