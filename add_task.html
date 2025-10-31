@@ -4,13 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Task • Join</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet" />
-    <link
-      rel="icon"
-      href="img/logo/Logo for Favicon construction.svg"
-      type="image/svg+xml" />
+    <link rel="icon" href="img/logo/Logo for Favicon construction.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/sidebar.css" />
     <link rel="stylesheet" href="css/add-task.css" />
@@ -19,7 +13,6 @@
   <body onload="includeHeaderHTML();includeSidebarHTML();initAddTaskPage()">
     <nav header-html="./templates/header.html"></nav>
     <aside sidebar-html="./templates/sidebar.html"></aside>
-
     <main class="addtask-wrap">
       <div class="summary-head">
         <h1 class="page-title">
@@ -27,28 +20,33 @@
           <span class="subtitle">Key Metrics at a Glance</span>
         </h1>
       </div>
-
       <section class="kpi-grid">
         <article class="kpi-card">
-          <div class="kpi-icon">edit_square</div>
+          <div class="kpi-icon"><img src="img/icons/edit.svg" alt="To-do" width="36" height="36"/></div>
           <div class="kpi-value" id="kpi-todo">1</div>
           <div class="kpi-label">To-do</div>
         </article>
         <article class="kpi-card">
-          <div class="kpi-icon material-icons">check_circle</div>
+          <div class="kpi-icon"><img src="img/icons/done.svg" alt="Done" width="36" height="36"/></div>
           <div class="kpi-value" id="kpi-done">1</div>
           <div class="kpi-label">Done</div>
         </article>
         <article class="kpi-card urgent">
-          <div class="kpi-icon material-icons">priority_high</div>
+          <div class="kpi-icon"><img src="img/icons/urgent.svg" alt="Urgent" width="36" height="36"/></div>
           <div class="kpi-value" id="kpi-urgent">1</div>
           <div class="kpi-label">Urgent</div>
         </article>
         <article class="kpi-card deadline">
-          <div class="kpi-deadline-date" id="kpi-deadline-date">
-            October 16, 2022
+          <div class="kpi-icon"></div>
+          <div style="display: flex; align-items:center; gap:24px;">
+            <div>
+              <div class="kpi-value" id="kpi-upcoming"></div>
+              <div class="kpi-label"><strong>October 16, 2022</strong></div>
+            </div>
+            <div style="margin-left:18px">
+              <div class="kpi-label">Upcoming Deadline</div>
+            </div>
           </div>
-          <div class="kpi-label">Upcoming Deadline</div>
         </article>
         <article class="kpi-card">
           <div class="kpi-value" id="kpi-board">5</div>
@@ -63,30 +61,27 @@
           <div class="kpi-label">Awaiting Feedback</div>
         </article>
       </section>
-
       <section class="greeting">
-        <p class="greet-text">
-          Good morning,
-          <span class="greet-name" id="greet-name">Sofia Müller</span>
-        </p>
+        <p class="greet-text">Good morning, <span class="greet-name" id="greet-name">Sofia Müller</span></p>
       </section>
     </main>
-
     <script src="scripts/config.js"></script>
     <script src="scripts/helpers.js"></script>
     <script src="scripts/storage.js"></script>
     <script src="scripts/templates.js"></script>
     <script>
-      // Mark active link after sidebar is injected
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          document.querySelectorAll(".sidebar .nav-item").forEach((a) => {
-            const href = a.getAttribute("href");
-            if (href && location.pathname.endsWith(href)) {
-              a.classList.add("active");
+      // Mark active nav after sidebar loads
+      window.addEventListener('load', ()=>{
+        setTimeout(()=>{
+          document.querySelectorAll('.sidebar .nav-item').forEach(a=>{
+            const href=a.getAttribute('href');
+            if(href && location.pathname.endsWith(href)){
+              a.classList.add('active');
+            } else {
+              a.classList.remove('active');
             }
           });
-        }, 0);
+        },0);
       });
     </script>
     <script src="scripts/add_task.js"></script>
