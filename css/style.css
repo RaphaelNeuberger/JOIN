@@ -2,29 +2,15 @@ body {
   margin: 0;
 }
 
-/* .main-sidebar {
-  background-color: #2a3647;
-  width: 232px;
-  height: 100vh;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+:root {
+  --bg: #f6f7f8;
+  --panel: #ffffff;
+  --ink: #2a3647;
+  --muted: #6b7280;
+  --accent: #29abe2;
+  --urgent: #ff3d00;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
-
-.sidebar-top {
-  margin-top: 140px;
-  width: 100%;
+body {
+  background: var(--bg);
 }
-
-.sidebar-bottom {
-  margin-bottom: 64px;
-  margin-top: auto;
-  padding-top: 200px;
-  color: #a8a8a8;
-  width: 100%;
-}
-
-.sidebar-bottom ul a {
-  color: #a8a8a8;
-} */

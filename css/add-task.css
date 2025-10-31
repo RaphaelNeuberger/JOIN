@@ -1,15 +1,3 @@
-:root {
-  --bg: #f6f7fb;
-  --panel: #ffffff;
-  --ink: #2a3647;
-  --muted: #6b7280;
-  --accent: #29abe2;
-  --urgent: #ff3d00;
-  --shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-}
-body {
-  background: var(--bg);
-}
 nav[header-html],
 aside[sidebar-html] {
   display: block;
@@ -36,7 +24,7 @@ main.addtask-wrap {
   gap: 12px;
 }
 .divider {
-  background-color: #29abe2;
+  background-color: var(--accent);
   width: 2px;
   height: 59px;
 }
@@ -51,7 +39,7 @@ main.addtask-wrap {
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
   align-items: stretch;
 }
@@ -76,13 +64,14 @@ main.addtask-wrap {
 
 .kpi-line {
   display: flex;
+  width: auto;
 }
 
 .kpi-card {
   background: var(--panel);
   border-radius: 30px;
   box-shadow: var(--shadow);
-  padding: 18px 20px;
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -90,6 +79,12 @@ main.addtask-wrap {
   flex-wrap: wrap;
   width: 100%;
   padding: 24px;
+  margin: 0 0 24px 24px;
+}
+
+.kpi-card deadline {
+  padding: 0 36px 0 36px;
+  display: flex;
 }
 
 .kpi-card3 {
@@ -98,22 +93,40 @@ main.addtask-wrap {
   box-shadow: var(--shadow);
   padding: 18px 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  padding: 24px;
+  margin: 0 24px 0 24px;
 }
 .kpi-icon {
   font-size: 22px;
-  color: #2a3647;
-  background-color: #2a3647;
+  color: var(--ink);
+  background-color: var(--ink);
   padding: 12px;
   border-radius: 90%;
-  opacity: 0.9;
+  margin: 0 24px 0 24px;
   margin-bottom: 6px;
   width: 32px;
   height: 32px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.kpi-iconurgent {
+  background-color: #ff3d00;
+  padding: 12px;
+  border-radius: 90%;
+}
+
+.dividerdeadline {
+  width: 2px;
+  color: #d1d1d1;
+  height: 50px;
+  background-color: #d1d1d1;
 }
 
 .kpi-valuelabel {
@@ -130,6 +143,7 @@ main.addtask-wrap {
   font-size: 12px;
   color: var(--muted);
   margin-top: 4px;
+  text-align: center;
 }
 .kpi-card.urgent .kpi-icon {
   color: var(--urgent);
@@ -145,12 +159,12 @@ main.addtask-wrap {
   color: #1f2a3c;
 }
 /* greeting on the right */
-.greeting {
+.kpi-right {
   right: 40px;
   top: 140px;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+
   flex-wrap: wrap;
   align-content: center;
   flex-direction: column;
@@ -158,6 +172,7 @@ main.addtask-wrap {
 .greet-text {
   font-size: 47px;
   color: #2a3647;
+  margin: 0px;
 }
 .greet-name {
   color: var(--accent);
