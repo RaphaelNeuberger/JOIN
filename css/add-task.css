@@ -47,16 +47,23 @@ main.addtask-wrap {
   color: var(--muted);
 }
 /* KPI grid */
+
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(3, 240px);
   grid-auto-rows: 120px;
   gap: 16px;
   display: flex;
+  justify-content: start;
 }
+
+.kpi-left {
+  display: flex;
+}
+
 .kpi-card {
   background: var(--panel);
-  border-radius: 12px;
+  border-radius: 30px;
   box-shadow: var(--shadow);
   padding: 18px 20px;
   display: flex;
@@ -105,17 +112,23 @@ main.addtask-wrap {
 }
 /* greeting on the right */
 .greeting {
-  position: absolute;
   right: 40px;
   top: 140px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
 }
 .greet-text {
-  font-size: 28px;
-  color: #1f2a3c;
+  font-size: 47px;
+  color: #2a3647;
 }
 .greet-name {
   color: var(--accent);
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 64px;
 }
 /* responsive */
 @media (min-width: 1280px) {
