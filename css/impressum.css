@@ -161,3 +161,29 @@ footer {
 .Datenschutz a:hover {
   text-decoration: underline;
 }
+/* ===== NUR RESPONSIVE, Desktop bleibt unverändert ===== */
+@media (max-width: 900px) {
+  /* Sidebar ausblenden */
+  .main-sidebar {
+    display: none;
+  }
+
+  /* Header-Text rückt nicht mehr für Sidebar ein */
+  .marginsidebar {
+    margin-left: 0;
+  }
+
+  /* Inhalt nutzt volle Breite unter dem fixen Header */
+  .main-content {
+    margin-left: 0;      /* kein Platz mehr für Sidebar */
+    margin-top: 120px;   /* behält Abstand zum Header */
+    padding: 24px;
+    max-width: 100%;
+  }
+
+  /* Footer ohne Sidebar-Abstand */
+  footer {
+    margin-left: 0;
+    padding: 24px;
+  }
+}
