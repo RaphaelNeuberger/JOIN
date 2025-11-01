@@ -1,19 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Task • Join</title>
-    <link
-      rel="icon"
-      href="img/logo/Logo for Favicon construction.svg"
-      type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/sidebar.css" />
-    <link rel="stylesheet" href="css/add-task.css" />
-    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/add_task.css" />
   </head>
+  <body onload="includeHeaderHTML();includeSidebarHTML();initAddTaskPage()">
+    <main class="task-form-container">
+      <h1 class="task-form__title">Add Task</h1>
 
-  <
+      <form class="task-form" id="taskForm" novalidate>
+        <div class="task-form__layout">
+          <div class="task-form__column-left">
+            <!-- Title Field -->
+            <div class="form-group">
+              <label class="form-group__label" for="title">
+                Title <span class="form-group__required">*</span>
+              </label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                class="form-group__input"
+                placeholder="Enter a title"
+                required />
+              <span class="form-group__error" id="titleError"></span>
+            </div>
+
+            <!-- Description Field -->
+            <div class="form-group">
+              <label class="form-group__label" for="description"
+                >Description</label
+              >
+              <textarea
+                id="description"
+                name="description"
+                class="form-group__textarea"
+                placeholder="Enter a Description"
+                rows="4"></textarea>
+            </div>
+
+            <!-- Due Date Field -->
+            <div class="form-group">
+              <label class="form-group__label" for="dueDate">
+                Due date <span class="form-group__required">*</span>
+              </label>
+              <div class="form-group__date-wrapper">
+                <input
+                  type="date"
+                  id="dueDate"
+                  name="dueDate"
+                  class="form-group__input form-group__input--date"
+                  required />
+              </div>
+              <span class="form-group__error" id="dueDateError"></span>
+            </div>
+          </div>
+
+          <div class="task-form__column-right">
+            <!-- Priority Selection -->
+            <div class="form-group">
+              <label class="form-group__label">Priority</label>
+              <div class="priority-buttons">
+                <button
+                  type="button"
+                  class="priority-buttons__button"
+                  data-priority="Urgent">
+                  <svg
+                    class="priority-buttons__icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M8 2L8 14M4 6L8 2L12 6"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  Urgent
+                </button>
+                <button
+                  type="button"
+                  class="priority-buttons__button priority-buttons__button--active"
+                  data-priority="Medium">
+                  <svg
+                    class="priority-buttons__icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M3 6H13M3 10H13"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round" />
+                  </svg>
+                  Medium
+                </button>
+                <button
+                  type="button"
+                  class="priority-buttons__button"
+                  data-priority="Low">
+                  <svg
+                    class="priority-buttons__icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16">
+                    <path
+                      d="M3 8L7 12L13 4"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                  Low
+                </button>
+              </div>
+            </div>
+
+            <!-- Assigned To Field -->
+            <div class="form-group">
+              <label class="form-group__label" for="assignedTo"
+                >Assigned to</label
+              >
+              <select
+                id="assignedTo"
+                name="assignedTo"
+                class="form-group__select">
+                <option value="">Select contacts to assign</option>
+                <option value="John Doe">John Doe</option>
+                <option value="Jane Smith">Jane Smith</option>
+                <option value="Mike Johnson">Mike Johnson</option>
+                <option value="Sarah Williams">Sarah Williams</option>
+              </select>
+            </div>
+
+            <!-- Category Field -->
+            <div class="form-group">
+              <label class="form-group__label" for="category">
+                Category <span class="form-group__required">*</span>
+              </label>
+              <select
+                id="category"
+                name="category"
+                class="form-group__select"
+                required>
+                <option value="">Select task category</option>
+                <option value="Development">Development</option>
+                <option value="Design">Design</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
+                <option value="Support">Support</option>
+              </select>
+              <span class="form-group__error" id="categoryError"></span>
+            </div>
+
+            <!-- Subtasks Field -->
+            <div class="form-group">
+              <label class="form-group__label" for="subtaskInput"
+                >Subtasks</label
+              >
+              <div class="subtask-input">
+                <input
+                  type="text"
+                  id="subtaskInput"
+                  class="subtask-input__field"
+                  placeholder="Add new subtask" />
+                <button
+                  type="button"
+                  class="subtask-input__button"
+                  id="addSubtaskBtn">
+                  <svg width="16" height="16" viewBox="0 0 16 16">
+                    <path
+                      d="M8 3V13M3 8H13"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round" />
+                  </svg>
+                </button>
+              </div>
+              <ul class="subtask-list" id="subtaskList"></ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Actions -->
+        <div class="form-actions">
+          <button
+            type="button"
+            class="form-actions__button form-actions__button--clear"
+            id="clearBtn">
+            Clear
+          </button>
+          <button
+            type="submit"
+            class="form-actions__button form-actions__button--submit"
+            id="submitBtn">
+            Create Task
+            <svg
+              class="form-actions__icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16">
+              <path
+                d="M3 8L7 12L13 4"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </form>
+
+      <!-- Success Message -->
+      <div class="success-message" id="successMessage">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="9" fill="#4CAF50" />
+          <path
+            d="M5 10L8 13L15 6"
+            stroke="white"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        Task created successfully!
+      </div>
+    </main>
+
+    <script src="scripts/add_task.js"></script>
+  </body>
 </html>
