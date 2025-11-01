@@ -154,6 +154,7 @@ main.addtask-wrap {
 .kpi-value {
   font-size: 64px;
   font-weight: 600;
+  font-style: Semi Bold;
   color: #1f2a3c;
   display: flex;
 }
