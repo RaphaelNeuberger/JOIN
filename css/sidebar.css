@@ -85,6 +85,7 @@
     background: #2a3647;
     border-top: 1px solid #3a4859;
     color: #fff;
+    gap: 12px;
   }
 
 .nav-item {
@@ -103,9 +104,7 @@
 .sidebar-brand, .sidebar-footer {
     display: none;
   }
-  .nav-item span:last-child {
-    display: none;
-  }
+
   .sidebar-logo {
     height: 40px;
   }
