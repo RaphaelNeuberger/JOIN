@@ -75,6 +75,24 @@
   .sidebar {
     width: 80px;
   }
+
+.nav-item {
+  display: ;
+  padding-left: 0px;
+}
+
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 560px;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
   .nav-item span:last-child {
     display: none;
   }
