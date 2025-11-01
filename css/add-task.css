@@ -13,12 +13,12 @@ main.addtask-wrap{margin-left:264px;padding:32px 40px 64px;max-width:1160px}
 .kpi-row.kpi-wide>.kpi-card{flex:1}
 .kpi-row:not(.kpi-wide)>.kpi-card{width:240px}
 
-.kpi-card{background:var(--panel);border-radius:12px;box-shadow:var(--shadow);padding:18px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.kpi-card{background:var(--panel);border-radius:12px;box-shadow:0 6px 16px rgba(0,0,0,.06),6px 0 16px rgba(0,0,0,.04);padding:18px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .kpi-icon{margin-bottom:6px}
 .kpi-icon img{width:36px;height:36px}
 .kpi-value{font-size:28px;font-weight:800;color:#1f2a3c}
 .kpi-label{font-size:12px;color:var(--muted);margin-top:4px;text-align:center}
-.kpi-card.urgent .kpi-icon img{filter: none}
+.kpi-card.urgent .kpi-icon img{filter:none}
 
 /* deadline right card layout */
 .kpi-card.deadline{align-items:flex-start}
