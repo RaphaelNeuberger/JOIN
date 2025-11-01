@@ -235,6 +235,13 @@ main.addtask-wrap {
   main.addtask-wrap {
     margin-left: 88px;
   }
+  .page-title {
+    font-size: 47px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
 
   .kpi-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -246,18 +253,28 @@ main.addtask-wrap {
     color: #1f2a3c;
     display: flex;
   }
+  .kpi-iconurgent {
+    padding: 12px;
+    margin: 12px;
+  }
 
+  .dividerdeadline {
+    margin: 12px 12px;
+  }
   .greeting {
     display: none;
+  }
+
+  .kpi-card {
+    flex-wrap: nowrap;
+    padding: 10;
   }
 }
 @media (max-width: 640px) {
   main.addtask-wrap {
     margin-left: 0;
   }
-  .page-title {
-    font-size: 28px;
-  }
+
   .kpi-grid {
     grid-template-columns: 1fr;
   }
