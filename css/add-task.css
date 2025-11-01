@@ -204,16 +204,6 @@ main.addtask-wrap {
   .kpi-right {
     display: none;
   }
-
-  .divider1 {
-    display: none;
-  }
-
-  .divider2 {
-    background-color: var(--accent);
-    width: 59px;
-    height: 2px;
-  }
 }
 @media (max-width: 1100px) {
   main.addtask-wrap {
@@ -229,6 +219,16 @@ main.addtask-wrap {
     flex-direction: column;
 
     align-items: flex-start;
+  }
+
+  .divider1 {
+    display: none;
+  }
+
+  .divider2 {
+    background-color: var(--accent);
+    width: 59px;
+    height: 2px;
   }
 }
 @media (max-width: 900px) {
@@ -256,6 +256,16 @@ main.addtask-wrap {
   .kpi-iconurgent {
     padding: 12px;
     margin: 12px;
+  }
+
+  .divider1 {
+    display: none;
+  }
+
+  .divider2 {
+    background-color: var(--accent);
+    width: 59px;
+    height: 2px;
   }
 
   .dividerdeadline {
